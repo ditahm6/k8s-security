@@ -7,27 +7,38 @@
 
 ## k8s(cluster(Node(Pod(Container(image(version))))))
     - Specify a pinned version on each container image
-    Why?
+        Why?
         Otherwise, the latest version is fetched, which makes it unpredictable and intransparent as to which versions are deployed in the cluster
+        These can be set in the deployment file or the CICD pipeline
   
     - Configure a liveness probe on each container
-    Why?
-        K8s knows the Pod state, not the application state. Sometimes a pod is running, but the container inside crashed. With a liveness probe, we can let K8s know when it needs to restart the container
+        Why?
+        K8s knows the Pod state, not the application state
+        Sometimes a pod is running, but the container inside crashed
+        With a liveness probe, we can let K8s know when it needs to restart the container
+        It can be configured in the spec section of a deployment
+        This is beneficial, when the application is already running
 
     - Configure a readiness probe on each container
-    Why? 
+        Why? 
         Let's K8s know if an application is ready to receive traffic
+        This handles the starting up process, lets k8s know that the application inside the pod has started and is ready
+            We can achieve both liveness && readiness probe, by using
+            1. commands
+            2. TCP probes
+            3. HTTP probes
     
     - Configure resource limits & requests for each container
-    Why? 
+        Why? 
         To make sure 1 buggy container doesn't eat up all resources, breaking the cluster
 
     - Don't use NodePort in production
-    Why? 
-        NodePort exposes Worker Nodes directly, multiple points of entry to secure. Better alternative: Loadbalancer or Ingress
+        Why? 
+        NodePort exposes Worker Nodes directly, multiple points of entry to the cluster, making it insecure
+        Better alternative: Loadbalancer or Ingress
 
     - Always deploy more than 1 replica for each application for HA (it is better to split resources between two pods than to have one)
-    Why? 
+        Why? 
         To make sure your application is always available, no downtime for users!
 
     - Always have more than 1 Worker Node
@@ -63,4 +74,4 @@
         ● Configure Liveness, Readiness Probes: https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/
         ● Resource Requests & Limits: https://cloud.google.com/blog/products/containers-kubernetes/kubernetes-best-practices-resource-requests-and-limitsCheck
 
-##
+##k
