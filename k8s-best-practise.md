@@ -42,32 +42,34 @@
         To make sure your application is always available, no downtime for users!
 
     - Always have more than 1 Worker Node
-    Why?
-         Avoid a single point of failure with just 1 Node
+        Why?
+        Avoid a single point of failure with just 1 Node
 
     - Label all your K8s resources
-    Why?
+        Why?
         To Have an identifier for your components to group pods and reference in Service
         
     - Use namespaces to group your resources
-    Why? 
-        To organize resources and define access rights based on namespaces e.g.
+        Why? 
+        To organize resources and define access rights based on namespaces
 
     - Use namespaces to group your resources
-    Why?
-        To organize resources and define access rights based on namespaces e.g.
+         Why?
+        To organize resources and define access rights based on namespaces
 
     - Ensure Images are free of vulnerabilities
-    Why? 
-        Third-party libraries or base images can have known vulnerabilities. You can do manual vulnerability scans or better-automated scans in CI/CD pipeline
+        Why? 
+        Third-party libraries or base images can have known vulnerabilities
+        You can do manual vulnerability scans or better-automated scans in CI/CD pipeline
 
     - No root access for containers
-    Why?
+        Why?
         With root access, they have access to host-level resources. Much more damage is possible if the container gets hacked!
     
     - Keep the K8s version up to date
-    Why & How? 
-        The latest versions include patches to previous security issues etc. Upgrade with zero downtime by having multiple nodes and pod replicas on different nodes
+        Why & How? 
+        The latest versions include patches to previous security issues etc
+        Upgrade with zero downtime by having multiple nodes and pod replicas on different nodes
 
         Useful Links:
         ● Git Repo for Best Practices Configuration Files for the Microservices App: https://gitlab.com/nanuchi/online-shop-microservices-deployment
