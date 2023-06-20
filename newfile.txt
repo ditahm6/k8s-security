@@ -1,0 +1,17 @@
+## Thesr are the stesp to clone a repo and create a branch
+### Clone the repo
+  - git clone <repo-ssh-url>
+
+### Create a new branch
+  - git checkout -b <new-branch-Name>
+
+### Add your new file
+  - git add <file-name>
+
+### Commit changes locally
+  - git commit -m "created new file, refactored code"
+
+### add the new remote branch
+  - git push -u oringin <new-branch-name>
+
+### now the changes should be in remote repo
