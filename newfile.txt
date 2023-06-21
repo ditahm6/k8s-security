@@ -15,3 +15,5 @@
   - git push -u oringin <new-branch-name>
 
 ### now the changes should be in remote repo
+### Thank you
+Add new content to the file
